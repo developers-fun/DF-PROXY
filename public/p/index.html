@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta name="robots" content="no index, no follow">
         <script src="/uv/uv.bundle.js"></script>
         <script src="/uv/uv.config.js"></script>
-        <script src="/baremux/index.js"></script>
 
         <script>
         if ("serviceWorker" in navigator) {
-            window.addEventListener("load", async () => {
-                await navigator.serviceWorker.register("/uv/sw.js");
+            window.addEventListener("load", () => {
+                navigator.serviceWorker.register("/uv/sw.js", {
+                    scope: __uv$config.prefix,
+                });
             });
         }
         </script>

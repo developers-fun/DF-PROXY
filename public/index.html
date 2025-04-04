@@ -1,97 +1,20 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta
-          name="description"
-          content="Play free online games at ColdNova. Discover a variety of games and enjoy endless fun!"
-        />
-        <meta
-          name="keywords"
-          content="free online games, ColdNova, gaming, play games"
-        />
-        <meta name="author" content="ColdNova Team" />
-    
-        <meta name="robots" content="index, follow">
-        <title>ColdNova - Free Online Games - Play Now!</title>
-    
-        <link rel="preload" href="/assets/css/style.css" as="style" />
-        <link rel="stylesheet" href="/assets/css/style.css" />  
-    
-        <link rel="icon" type="image/png" href="/assets/favicon/favicon-96x96.png" sizes="96x96" />
-        <link rel="icon" type="image/svg+xml" href="/assets/favicon/favicon.svg" />
-        <link rel="shortcut icon" href="/assets/favicon/favicon.ico" />
-        <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png" />
-        <meta name="apple-mobile-web-app-title" content="ColdNova" />
-        <link rel="manifest" href="/assets/favicon/site.webmanifest" />
-    
-        <!-- Google tag (gtag.js) -->
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-9Q7RZ9FZ99"></script>
-        <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="./assets/css/style.css">
+</head>
+<body>
+<main>
+<h1>Coldnova</h1>
+<h2>Get around blockers</h2>
+<form onsubmit="handleSubmit(event)">
+<div class="inputborder">
+<input placeholder="Search anything" id="urlinput" type="url" required>
+</div>
+</form>
+</main>
 
-        gtag('config', 'G-9Q7RZ9FZ99');
-        </script>
-      </head>
-  <body>
-    <main>
-      <h1>Developers Fun Proxy</h1>
-      <h2>Get around blockers</h2>
-      <form onsubmit="handleSubmit(event)">
-        <div class="inputborder">
-          <input
-            placeholder="Search anything"
-            id="urlinput"
-            type="url"
-            required
-          />
-        </div>
-      </form>
-    </main>
-
-    <script>
-        (function () {
-            const allowedHosts = [
-                "about:blank",          // Add your allowed domain(s)
-                "proxy.developers-fun.com"
-            ];
-        
-            // Check if we're inside an iframe
-            const isFramed = window.self !== window.top;
-        
-            if (isFramed) {
-                try {
-                    const parentUrl = new URL(document.referrer);
-                    const parentHost = parentUrl.hostname;
-        
-                    if (!allowedHosts.includes(parentHost)) {
-                        console.warn("Blocked embedding from unauthorized domain:", parentHost);
-                        document.body.innerHTML = "<h1>Embedding Not Allowed</h1>";
-                        // OR redirect:
-                        // window.top.location = "https://yourdomain.com";
-                    } else {
-                        console.log("Embedding allowed from:", parentHost);
-                    }
-                } catch (err) {
-                    console.warn("Could not verify parent host:", err);
-                    document.body.innerHTML = "<h1>Embedding Verification Failed</h1>";
-                }
-            } else {
-                console.log("Page not embedded, running normally.");
-            }
-        })();
-        
-
-      function handleSubmit(e) {
-        e.preventDefault();
-        const input = document.getElementById("urlinput");
-        if (input.value) {
-          window.location.href = `/p?url=${encodeURIComponent(input.value)}`;
-        }
-      }
-    </script>
-  </body>
+<script src="./assets/js/scr.js"></script>
+</body>
 </html>
