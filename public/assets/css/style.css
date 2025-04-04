@@ -1,0 +1,58 @@
+body {
+    background-color: #111;
+    color: white;
+    font-family: roboto, sans-serif;
+    padding: 25px;
+    }
+    
+    main {
+    display: grid;
+    justify-items: center;
+    background: linear-gradient(131deg, rgb(156, 131, 255) 42%, rgba(224, 240, 16, 0.937) 70%, rgb(255, 144, 81) 75%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    }
+    
+    h1 {
+    font-size: 40px;
+    }
+    
+    h2 {
+    margin-top: 20px;
+    }
+    
+    input {
+    width: 300px;
+    height: 60px;
+    border-radius: 15px;
+    outline: none;
+    border: none;
+    background: #1e1e1e;
+    color: white;
+    font-family: roboto, sans-serif;
+    font-size: 20px;
+    }
+    
+    @property --angle {
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+    }
+    
+    .inputborder {
+    padding: 4px;
+    position: relative;
+    border-radius: 15px;
+    background: conic-gradient(from var(--angle), blue, transparent 20%);
+    animation: spin 1.5s linear infinite;
+    }
+    
+    @keyframes spin {
+    from {
+    --angle: 0deg;
+    }
+    to {
+    --angle: 360deg;
+    }
+    }
