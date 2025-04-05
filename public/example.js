@@ -11,9 +11,6 @@ function g(event) {
         url = "https://" + url;
     }
 
-    // Assuming you're using Ultraviolet's config
     const finalUrl = __uv$config.prefix + __uv$config.encodeUrl(url);
-    
-    // Open in new tab or redirect the current window
-    window.location.href = finalUrl; // or use window.open(finalUrl, '_blank')
+    window.location.href = finalUrl;
 }

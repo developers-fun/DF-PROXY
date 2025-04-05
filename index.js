@@ -11,6 +11,7 @@ const __dirname = process.cwd();
 const bareServer = createBareServer('/b/');
 
 app.use(express.json()); 
+app.use('/uv/', express.static(__dirname + '/public/uv'));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(__dirname + '/public'));
 app.use(cors());
