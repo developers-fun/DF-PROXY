@@ -12,5 +12,5 @@ function g(event) {
     }
 
     const finalUrl = __uv$config.prefix + __uv$config.encodeUrl(url);
-    window.location.href = finalUrl;
+    document.getElementById("mainframe").src = finalUrl
 }
